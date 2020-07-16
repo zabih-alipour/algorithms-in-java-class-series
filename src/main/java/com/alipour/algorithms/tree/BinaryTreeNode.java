@@ -11,7 +11,7 @@ public class BinaryTreeNode extends TreeNode {
         super(data);
     }
 
-    public BinaryTreeNode(){
+    public BinaryTreeNode() {
         super();
     }
 
@@ -20,14 +20,14 @@ public class BinaryTreeNode extends TreeNode {
         if (getData().equals(data)) {
             return;
         }
-        if (getData().compareTo(data) > 0) {
+        if (getData().compareTo(data) < 0) {
             if (rightNode == null) {
                 rightNode = new BinaryTreeNode(data);
             } else {
                 rightNode.insert(data);
             }
         }
-        if (getData().compareTo(data) < 0) {
+        if (getData().compareTo(data) > 0) {
             if (leftNode == null) {
                 leftNode = new BinaryTreeNode(data);
             } else {
@@ -62,5 +62,43 @@ public class BinaryTreeNode extends TreeNode {
             return this;
 
         return rightNode.max();
+    }
+
+    @Override
+    public void innerOrder() {
+        if (leftNode != null) {
+            leftNode.innerOrder();
+        }
+        System.out.print(getData() + ", ");
+        if (rightNode != null) {
+            rightNode.innerOrder();
+        }
+    }
+
+    @Override
+    public void preOrder() {
+        System.out.print(getData() + ", ");
+        if (leftNode != null) {
+            leftNode.preOrder();
+        }
+        if (rightNode != null) {
+            rightNode.preOrder();
+        }
+    }
+
+    @Override
+    public void postOrder() {
+        if (leftNode != null) {
+            leftNode.postOrder();
+        }
+        if (rightNode != null) {
+            rightNode.postOrder();
+        }
+        System.out.print(getData() + ", ");
+    }
+
+    @Override
+    public void levelOrder() {
+        // TODO: 7/16/2020 Implement in next session
     }
 }

@@ -15,4 +15,10 @@ public class TreeNode implements Order, Actions {
     public TreeNode() {
     }
 
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "data=" + data +
+                '}';
+    }
 }

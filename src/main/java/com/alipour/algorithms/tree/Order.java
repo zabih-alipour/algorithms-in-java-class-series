@@ -5,7 +5,7 @@ public interface Order {
         System.out.println("preOrder not implemented yet!!!");
     }
 
-    default void rightOrder() {
+    default void postOrder() {
         System.out.println("rightOrder not implemented yet!!!");
 
     }
