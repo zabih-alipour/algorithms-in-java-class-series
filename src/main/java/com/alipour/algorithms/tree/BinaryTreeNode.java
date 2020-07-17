@@ -40,10 +40,10 @@ public class BinaryTreeNode extends TreeNode {
     public TreeNode get(Integer data) {
         if (getData().equals(data)) {
             return this;
-        } else if (getData().compareTo(data) > 0) {
-            return rightNode;
+        } else if (getData().compareTo(data) < 0) {
+            return rightNode.get(data);
         } else {
-            return leftNode;
+            return leftNode.get(data);
         }
     }
 
@@ -96,6 +96,7 @@ public class BinaryTreeNode extends TreeNode {
         }
         System.out.print(getData() + ", ");
     }
+
 
     @Override
     public void levelOrder() {

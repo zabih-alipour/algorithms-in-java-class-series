@@ -14,6 +14,9 @@ public class Main {
         tree.postOrder();
         System.out.println();
         System.out.println("Min: " + tree.min());
-        System.out.println("Max: " + tree.max());
+        System.out.println("Min: " + tree.max());
+        System.out.println("Get Min: " + tree.get(tree.min().getData()));
+        System.out.println("Get Max: " + tree.get(tree.max().getData()));
+
     }
 }

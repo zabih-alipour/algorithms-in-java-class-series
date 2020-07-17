@@ -69,4 +69,11 @@ public class Tree<T extends TreeNode> implements Actions, Order {
         }
         return null;
     }
+
+    @Override
+    public TreeNode get(Integer data) {
+        if (hasRoot()) {
+            return root.get(data);
+        } else return null;
+    }
 }
